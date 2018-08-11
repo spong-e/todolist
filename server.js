@@ -14,8 +14,6 @@ app.use(bodyParser.json())
 const dbConfig = require('./config/database.config.js');
 const mongoose = require('mongoose');
 
-console.log("DbConfig", dbConfig);
-
 mongoose.Promise = global.Promise;
 
 // Connecting to the database
@@ -29,7 +27,7 @@ mongoose.connect(dbConfig.url)
 
 // define a simple route
 app.get('/', (req, res) => {
-    res.json({"message": "Welcome to EasyNotes application. Take notes quickly. Organize and keep track of all your notes."});
+    res.json({"message": "Welcome to ToDoList application. Make notes easily"});
 });
 
 require('./app/routes/note.routes.js')(app);
